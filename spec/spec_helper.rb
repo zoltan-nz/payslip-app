@@ -6,7 +6,17 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
+Capybara.asset_host = "http://localhost:3000"
 Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app,
+                                    :js_errors => true,
+                                    :debug => false,
+                                    :phantomjs_logger => File.open("log/phantomjs.log", 'a'),
+                                    # http://www.jonathanleighton.com/articles/2012/poltergeist-0-6-0/
+                                    :inspector => true
+                                    )
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -43,4 +53,11 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # A required workaround to get capybara working
+  config.include Capybara::DSL
+
+  # Allow shorter factory commands
+  config.include FactoryGirl::Syntax::Methods
+
 end

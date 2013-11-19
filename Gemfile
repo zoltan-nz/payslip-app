@@ -25,6 +25,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
 
+  gem 'guard'
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'meta_request'
@@ -39,6 +40,7 @@ group :development, :test do
 
   gem 'rspec-rails'
 
+  gem 'libnotify'
   gem 'rb-fsevent',                         require: false  if RUBY_PLATFORM.match(/darwin/)
   gem 'rb-inotify',                         require: false  unless RUBY_PLATFORM.match(/darwin/)
 
@@ -54,6 +56,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'zeus'
-  gem 'konacha'
-  gem 'guard-konacha'
 end
