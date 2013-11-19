@@ -15,8 +15,6 @@ gem 'haml-rails'
 
 gem 'puma'
 
-gem 'debugger', group: [:development, :test]
-
 group :development do
   gem 'annotate'
   gem 'better_errors'
