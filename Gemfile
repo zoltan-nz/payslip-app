@@ -11,6 +11,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder',             '~> 1.2'
 
 gem 'bootstrap-sass',       '~> 3.0.2.0'
+gem 'formtastic'
 gem 'haml-rails'
 
 gem 'puma'

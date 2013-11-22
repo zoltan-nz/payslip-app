@@ -5,8 +5,6 @@ feature 'Home page' do
     visit '/'
     expect(page).to have_content 'PaySlip App'
   end
-
-  scenario ''
 end
 
 

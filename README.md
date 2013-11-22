@@ -1,6 +1,7 @@
 #Employee monthly payslip
 
-When I input the employee's details: first name, last name, annual salary(positive integer) and super rate (0% - 50% inclusive), payment start date, the program should generate payslip information with name, pay period,  gross income, income tax, net income and super.
+When I input the employee's details: first name, last name, annual salary(positive integer) and super rate (0% - 50% inclusive), payment start date,
+the program should generate payslip information with name, pay period,  gross income, income tax, net income and super.
 
 The calculation details will be the following:
 

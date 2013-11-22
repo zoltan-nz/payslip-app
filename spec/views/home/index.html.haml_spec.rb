@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe "home/index.html.haml" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should have a button to add new Employee' do
+
+  end
+
+  it 'should have a button to list all Employee' do
+
+  end
+
 end
