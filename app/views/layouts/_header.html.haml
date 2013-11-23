@@ -1,7 +1,13 @@
 %nav.navbar.navbar-inverse
   .navbar-header
-    %button.navbar-toggle{data: {toggle:'collapse', target:'#navbar'}}
+    %button.navbar-toggle{data: {toggle:'collapse', target:'#menubar'}}
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
     =link_to 'PaySlip App', root_path, class: 'navbar-brand'
+  #menubar.collapse.navbar-collapse
+    %ul.nav.navbar-nav
+      %li=link_to 'Home', root_path
+      %li=link_to 'Employees', employees_path
+%ol.breadcrumb
+  =render_crumbs

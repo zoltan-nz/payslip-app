@@ -1,7 +1,7 @@
 Payslip::Application.routes.draw do
-
-  get "home/index"
   root 'home#index'
+
+  resources :employees
 
 end
 

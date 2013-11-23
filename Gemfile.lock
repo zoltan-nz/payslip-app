@@ -58,6 +58,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    crummy (1.8.0)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.2)
@@ -65,7 +66,7 @@ GEM
       debugger-linecache (~> 1.2.0)
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.3)
+    debugger-ruby_core_source (1.2.4)
     diff-lcs (1.2.5)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
@@ -80,8 +81,6 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.4)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     guard (2.2.4)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -210,7 +209,7 @@ GEM
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     slop (3.4.7)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -251,10 +250,10 @@ DEPENDENCIES
   bootstrap-sass (~> 3.0.2.0)
   capybara
   coffee-rails (~> 4.0.0)
+  crummy
   database_cleaner
   debugger
   factory_girl_rails
-  formtastic
   guard
   guard-livereload
   guard-rspec
