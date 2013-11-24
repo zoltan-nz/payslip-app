@@ -1,0 +1,27 @@
+=form_for @employee, html: {class: 'form-horizontal'} do |f|
+  .form-group
+    =f.label :first_name, 'First Name: ', class: 'control-label col-sm-2'
+    .col-sm-10
+      =f.text_field :first_name, class: 'form-control'
+  .form-group
+    =f.label :last_name, 'Last Name: ', class: 'control-label col-sm-2'
+    .col-sm-10
+      =f.text_field :last_name, class: 'form-control'
+  .form-group
+    =f.label :annual_salary, 'Annual Salary: ', class: 'control-label col-sm-2'
+    .col-sm-10
+      =f.text_field :annual_salary, class: 'form-control'
+  .form-group
+    =f.label :super_rate, 'Super Rate: ', class: 'control-label col-sm-2'
+    .col-sm-10
+      =f.text_field :super_rate, class: 'form-control'
+  .form-group
+    =f.label :payment_start_date, 'Payment Start Date: ', class: 'control-label col-sm-2'
+    .col-sm-10
+      =f.text_field :payment_start_date, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      =button_tag 'Reset', type: :reset, class: 'btn'
+      =f.submit 'Update', class: 'btn btn-success'
+.well.well-small
+  =link_to '<< Back to the list', employees_path

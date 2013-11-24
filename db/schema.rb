@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20131121213259) do
   create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "annual_salary"
-    t.decimal  "super_rate"
+    t.integer  "annual_salary",      default: 0
+    t.decimal  "super_rate",         default: 0.0
     t.string   "payment_start_date"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -7,9 +7,6 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
   end
 
-  def show
-  end
-
   def new
     @employee = Employee.new
   end
@@ -22,7 +19,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
+        format.html { redirect_to employees_path, notice: 'Employee was successfully created.' }
       else
         format.html { render action: 'new' }
       end
@@ -53,6 +50,6 @@ class EmployeesController < ApplicationController
     end
 
     def employee_params
-      params[:employee]
+      params[:employee].permit(:first_name, :last_name, :annual_salary, :super_rate, :payment_start_date)
     end
 end

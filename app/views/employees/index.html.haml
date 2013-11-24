@@ -1,4 +1,4 @@
-=link_to 'Add a new Employee', new_employee_path, class: 'btn btn-success'
+=link_to 'Add a new Employee', new_employee_path, class: 'btn btn-primary pull-right'
 
 %h3 List of Employees
 
@@ -19,11 +19,11 @@
         %td=employee.first_name
         %td=employee.last_name
         %td=employee.annual_salary
-        %td=employee.super_rate
+        %td="#{'%.2f'%(employee.super_rate*100)}%"
         %td=employee.payment_start_date
-        %td=link_to 'Payslip', '#'
+        %td=link_to 'Payslip', '#', class: 'btn btn-warning'
         %td
-          =link_to 'Edit', edit_employee_path(employee), class: 'btn'
+          =link_to 'Edit', edit_employee_path(employee), class: 'btn btn-success'
           =link_to 'X', employee_path(employee), method: :delete, confirm: 'Are you sure', class: 'btn btn-danger'
 
 
