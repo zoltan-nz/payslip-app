@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Payslip::Application.config.secret_key_base = '7dee75de6486f752a8afc3f71bb59a064e845e7a344993ce7e94b806a579aaf2b205033ddcf69e4b467a995c743efd37748480e4e4f871a7d882b254310b1f0b'
+PayslipApp::Application.config.secret_key_base = '7dee75de6486f752a8afc3f71bb59a064e845e7a344993ce7e94b806a579aaf2b205033ddcf69e4b467a995c743efd37748480e4e4f871a7d882b254310b1f0b'

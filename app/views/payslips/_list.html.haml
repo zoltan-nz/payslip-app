@@ -1,0 +1,20 @@
+%table.table
+
+  %thead
+    %th Name
+    %th Pay Period
+    %th Gross Income
+    %th Income Tax
+    %th Net Income
+    %th Super
+
+  %tbody
+    - @payslips.each do |ps|
+      %tr
+        %td=ps.name
+        %td=ps.pay_period
+        %td=ps.gross_income
+        %td=ps.income_tax
+        %td=ps.net_income
+        %td=ps.super
+

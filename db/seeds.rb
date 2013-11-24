@@ -6,9 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Employee.delete_all
 10.times do
-  start_date  = "01-01-2013".to_time
-  end_date    = Time.now
-  random_date = Time.at((end_date.to_f - start_date.to_f)*rand + start_date.to_f).to_date
-  Employee.create!(first_name: Forgery(:name).first_name, last_name: Forgery(:name).last_name, annual_salary: Forgery(:monetary).money(min: 20000, max: 150000), super_rate: rand(), payment_start_date: random_date)
+  Employee.create!(first_name: Forgery(:name).first_name, last_name: Forgery(:name).last_name, annual_salary: Forgery(:monetary).money(min: 50000, max: 150000), super_rate: rand(1..20)/100.to_f)
 end
+
+TaxRange.delete_all
+TaxRange.create!(income_min: 0,       income_max: 18200,  rate: 0     , tax_from_lower_range: 0)
+TaxRange.create!(income_min: 18201,   income_max: 37000,  rate: 0.19  , tax_from_lower_range: 0)
+TaxRange.create!(income_min: 37001,   income_max: 80000,  rate: 0.325 , tax_from_lower_range: 3572)
+TaxRange.create!(income_min: 80001,   income_max: 180000, rate: 0.37  , tax_from_lower_range: 17547)
+TaxRange.create!(income_min: 180000,  income_max: 10**20, rate: 0.45  , tax_from_lower_range: 54547)
+
+

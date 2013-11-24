@@ -9,8 +9,6 @@
     %th Last Name
     %th Annual Salary
     %th Super Rate
-    %th Payment Start Date
-    %th Payslip
     %th Actions
   %tbody
     - @employees.each do |employee|
@@ -20,10 +18,7 @@
         %td=employee.last_name
         %td=employee.annual_salary
         %td="#{'%.2f'%(employee.super_rate*100)}%"
-        %td=employee.payment_start_date
-        %td=link_to 'Payslip', '#', class: 'btn btn-warning'
         %td
           =link_to 'Edit', edit_employee_path(employee), class: 'btn btn-success'
           =link_to 'X', employee_path(employee), method: :delete, confirm: 'Are you sure', class: 'btn btn-danger'
-
 

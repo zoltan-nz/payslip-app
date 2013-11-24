@@ -5,7 +5,6 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :last_name
       t.integer :annual_salary, default: 0
       t.decimal :super_rate, default: 0
-      t.string :payment_start_date
 
       t.timestamps
     end

@@ -16,12 +16,8 @@
     .col-sm-10
       =f.text_field :super_rate, class: 'form-control'
   .form-group
-    =f.label :payment_start_date, 'Payment Start Date: ', class: 'control-label col-sm-2'
-    .col-sm-10
-      =f.text_field :payment_start_date, class: 'form-control'
-  .form-group
     .col-sm-offset-2.col-sm-10
       =button_tag 'Reset', type: :reset, class: 'btn'
-      =f.submit 'Update', class: 'btn btn-success'
+      =f.submit (@employee.new_record? ? 'Create' : 'Update'), class: 'btn btn-success'
 .well.well-small
   =link_to '<< Back to the list', employees_path

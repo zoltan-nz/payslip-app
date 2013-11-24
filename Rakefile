@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Payslip::Application.load_tasks
+PayslipApp::Application.load_tasks

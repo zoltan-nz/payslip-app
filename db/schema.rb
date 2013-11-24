@@ -11,14 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121213259) do
+ActiveRecord::Schema.define(version: 20131124115009) do
 
   create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "annual_salary",      default: 0
-    t.decimal  "super_rate",         default: 0.0
-    t.string   "payment_start_date"
+    t.integer  "annual_salary", default: 0
+    t.decimal  "super_rate",    default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tax_ranges", force: true do |t|
+    t.integer  "income_min"
+    t.integer  "income_max"
+    t.decimal  "rate"
+    t.integer  "tax_from_lower_range"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

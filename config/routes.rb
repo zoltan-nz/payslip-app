@@ -1,7 +1,12 @@
-Payslip::Application.routes.draw do
+PayslipApp::Application.routes.draw do
   root 'home#index'
 
   resources :employees
+
+  get '/payslips',          to: 'payslips#index',               as: :payslips
+  post '/payslips/multiple', to: 'payslips#show_multiple',       as: :payslips_multiple
+
+
 
 end
 
