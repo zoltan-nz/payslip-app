@@ -48,6 +48,8 @@ group :development, :test do
   gem 'rb-inotify',                         require: false  unless RUBY_PLATFORM.match(/darwin/)
 
   gem 'forgery'
+
+  gem 'fuubar'
 end
 
 group :test do

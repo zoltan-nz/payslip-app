@@ -8,5 +8,7 @@ class CreateEmployees < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :employees, [:id]
   end
 end

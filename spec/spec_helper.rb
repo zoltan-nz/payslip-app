@@ -60,4 +60,8 @@ RSpec.configure do |config|
   # Allow shorter factory commands
   config.include FactoryGirl::Syntax::Methods
 
+  #config.expect_with :rspec do |c|
+  #  c.syntax = :expect
+  #end
+
 end

@@ -22,7 +22,7 @@ class PayslipCalculator
     (self.gross_income - self.income_tax).to_i
   end
 
-  def super
+  def super_amount
     (self.gross_income * @super_rate).round(0)
   end
 

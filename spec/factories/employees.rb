@@ -6,6 +6,5 @@ FactoryGirl.define do
     last_name             'Baker'
     annual_salary         110050
     super_rate            0.15
-    payment_start_date    15/07/2012
   end
 end

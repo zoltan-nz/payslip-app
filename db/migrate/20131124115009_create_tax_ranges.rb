@@ -8,5 +8,7 @@ class CreateTaxRanges < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :tax_ranges, [:income_min, :income_max]
   end
 end

@@ -35,7 +35,7 @@ class Payslip
   end
 
   def super
-    @calculation.super
+    @calculation.super_amount
   end
 
 end

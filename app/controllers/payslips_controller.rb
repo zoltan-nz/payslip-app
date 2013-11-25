@@ -9,18 +9,32 @@ class PayslipsController < ApplicationController
 
   end
 
-  def show_multiple
+  def create
 
-    @payslips = []
-
-    @employees.each do |employee|
-      payslip = Payslip.new(employee: employee, pay_period_start_date: @pay_period_start_date, pay_period_end_date: @pay_period_end_date )
-      @payslips << payslip
+    respond_to do |format|
+      if payslips.lenght > 0
+        format.js { render 'show_multiple', with: @payslips }
+      else
+        format.html { render action: 'new' }
+      end
     end
 
   end
 
   private
+
+  def payslips
+
+    @payslips ||= begin
+      payslips = []
+      @employees.each do |employee|
+        payslips << Payslip.new(employee: employee, pay_period_start_date: @pay_period_start_date, pay_period_end_date: @pay_period_end_date )
+      end
+    end
+
+  end
+
+
 
   def set_form_params
     @employees_for_select ||= Employee.all
