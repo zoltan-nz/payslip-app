@@ -50,10 +50,12 @@ group :development, :test do
   gem 'forgery'
 
   gem 'fuubar'
+
+  gem 'factory_girl_rails'
 end
 
 group :test do
-  gem 'factory_girl_rails'
+
   gem 'capybara'
   gem 'poltergeist'
 

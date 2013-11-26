@@ -7,15 +7,31 @@
 #  last_name          :string(255)
 #  annual_salary      :integer
 #  super_rate         :decimal(, )
-#  payment_start_date :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
 #
 
 class Employee < ActiveRecord::Base
 
+  validates :first_name,    presence: true
+  validates :last_name,     presence: true
+  validates :annual_salary, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :super_rate,    presence: true, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 1.0}
+
+  before_validation :convert_super_rate_to_fraction
+
   def full_name
     "#{self.last_name}, #{self.first_name}"
+  end
+
+  private
+
+  def convert_super_rate_to_fraction
+    self.super_rate = self.super_rate.to_f/100 if percentage?
+  end
+
+  def percentage?
+    (self.super_rate.to_s.include?('%')) or (self.super_rate.to_f > 1.0)
   end
 
 end

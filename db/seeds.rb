@@ -8,7 +8,7 @@
 
 Employee.delete_all
 10.times do
-  Employee.create!(first_name: Forgery(:name).first_name, last_name: Forgery(:name).last_name, annual_salary: Forgery(:monetary).money(min: 50000, max: 150000), super_rate: rand(1..20)/100.to_f)
+  Employee.create!(first_name: Forgery(:name).first_name, last_name: Forgery(:name).last_name, annual_salary: Forgery(:monetary).money(min: 50000, max: 150000).to_i, super_rate: "#{rand(1..20)}%")
 end
 
 TaxRange.delete_all

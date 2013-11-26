@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 20131124115009) do
   create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "annual_salary", default: 0
-    t.decimal  "super_rate",    default: 0.0
+    t.integer  "annual_salary",                         default: 0
+    t.decimal  "super_rate",    precision: 4, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "employees", ["id"], name: "index_employees_on_id"
 
   create_table "tax_ranges", force: true do |t|
     t.integer  "income_min"
@@ -30,5 +32,7 @@ ActiveRecord::Schema.define(version: 20131124115009) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tax_ranges", ["income_min", "income_max"], name: "index_tax_ranges_on_income_min_and_income_max"
 
 end

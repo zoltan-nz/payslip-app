@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :employee do
     first_name            'Simon'
     last_name             'Baker'
-    annual_salary         110050
-    super_rate            0.15
+    annual_salary         '110050'
+    super_rate            '15%'
   end
 end
