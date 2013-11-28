@@ -1,8 +1,22 @@
-%h1 Available options
-
-.col-xs-6.well
-  %h4 Manage Employee Database
-.col-xs-6.well
-  %h4 Create Payslips from Employee Database
-.col-xs-6.well
-  %h4 Upload csv file and generate Payslips
+.jumbotron
+  %h1 Select an option
+  .row.middle
+    .col-md-4
+      .box
+        %p Employee Database
+        .text
+          You can manually add new employees to the database.
+        = link_to 'Employees', employees_path, class: 'btn btn-success btn-large btn-block'
+    .col-md-4
+      .box
+        %p Create Payslips
+        .text
+          Create payslips for employees who already in the database.
+        = link_to 'Payslips', employees_path, class: 'btn btn-warning btn-large btn-block'
+    .col-md-4
+      .box
+        %p Upload CSV file
+        .text
+          Upload a csv file with a list of employees and create payslips realtime.
+          Employees in csv file will be not stored in the database.
+        = link_to 'CSV manager', employees_path, class: 'btn btn-danger btn-large btn-block'
