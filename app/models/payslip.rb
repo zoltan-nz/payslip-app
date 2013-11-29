@@ -2,6 +2,8 @@ class Payslip
 
   include ActiveModel::Model
   attr_accessor :employee, :pay_period_start_date, :pay_period_end_date
+  attr_reader :calculation
+
 
   def initialize(attributes={})
     super
@@ -38,7 +40,7 @@ class Payslip
     @calculation.net_income
   end
 
-  def super
+  def super_amount
     @calculation.super_amount
   end
 

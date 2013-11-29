@@ -17,4 +17,17 @@ feature 'Payslips button' do
   end
 end
 
+feature 'Payslips button' do
+  scenario 'loading CSV manager page', js: true do
+    visit '/'
+    within(:xpath, "/html/body/div[1]/div/div/div[3]/div") do
+      click_on 'CSV Manager'
+    end
+    expect(page).to have_content 'CSV Manager'
+  end
+end
+
+
+
+
 
