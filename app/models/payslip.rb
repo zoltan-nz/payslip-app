@@ -11,8 +11,12 @@ class Payslip
         pay_period_start_date: @pay_period_start_date,
         pay_period_end_date: @pay_period_end_date,
         annual_tax: TaxRange.annual_tax(@employee.annual_salary)
-    )
+    ) if self.valid?
   end
+
+  validate :employee, :pay_period_start_date, :pay_period_end_date, presence: true
+  validate :dates_are_in_the_same_month?
+
 
   def name
     @employee.full_name
@@ -36,6 +40,17 @@ class Payslip
 
   def super
     @calculation.super_amount
+  end
+
+  private
+
+  def dates_are_in_the_same_month?
+    if @pay_period_start_date.to_date.month == @pay_period_end_date.to_date.month
+      true
+    else
+      errors.add(:pay_period_end_date, 'must be in the same month as start date')
+      false
+    end
   end
 
 end

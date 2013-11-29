@@ -7,4 +7,14 @@ feature 'Home page' do
   end
 end
 
+feature 'Payslips button' do
+  scenario 'loading Payslips page', js: true do
+    visit '/'
+    within(:xpath, "/html/body/div[1]/div/div/div[2]/div") do
+      click_on 'Payslips'
+    end
+    expect(page).to have_content 'Create Payslips'
+  end
+end
+
 

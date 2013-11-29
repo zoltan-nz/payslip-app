@@ -21,6 +21,7 @@ class EmployeesController < ApplicationController
       if @employee.save
         format.html { redirect_to employees_path, notice: 'Employee was successfully created.' }
       else
+        flash.now[:error] = @employee.errors.full_messages
         format.html { render action: 'new' }
       end
     end
@@ -31,6 +32,7 @@ class EmployeesController < ApplicationController
       if @employee.update(employee_params)
         format.html { redirect_to employees_path, notice: 'Employee was successfully updated.' }
       else
+        flash.now[:error] = @employee.errors.full_messages
         format.html { render action: 'edit' }
       end
     end
@@ -39,6 +41,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee.destroy
     respond_to do |format|
+      flash[:error] = "Employee was deleted from the database."
       format.html { redirect_to employees_url }
     end
   end

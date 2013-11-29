@@ -2,21 +2,18 @@
 #
 # Table name: employees
 #
-#  id                 :integer          not null, primary key
-#  first_name         :string(255)
-#  last_name          :string(255)
-#  annual_salary      :integer
-#  super_rate         :decimal(, )
-#  payment_start_date :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
+#  id            :integer          not null, primary key
+#  first_name    :string(255)
+#  last_name     :string(255)
+#  annual_salary :integer
+#  super_rate    :decimal(4, 2)
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 require 'spec_helper'
 
 describe Employee do
-
-  subject(:emp) {FactoryGirl.create(:employee)}
 
   it { should validate_presence_of(:first_name) }
   it { should validate_presence_of(:last_name) }
@@ -25,11 +22,26 @@ describe Employee do
   it { should validate_presence_of(:super_rate)}
   it { should validate_numericality_of(:super_rate) }
 
+  subject(:emp) {FactoryGirl.create(:employee)}
+  its(:full_name) {should eq "Baker, Simon" }
 
-  describe Employee, "#full_name" do
-    subject { create(:employee) }
+  describe 'super rate can except % or decimal or number without percentage' do
+    let(:emp_integer) {FactoryGirl.create(:employee, super_rate: 50)}
+    let(:emp_percentage) {FactoryGirl.create(:employee, super_rate: '30%')}
+    let(:emp_decimal) {FactoryGirl.create(:employee, super_rate: 0.04)}
 
-    its(:full_name) { should eq "Tisza, Niki" }
+    it 'converts integer to decimal' do
+      expect(emp_integer.super_rate).to eq 0.50
+    end
+
+    it 'converts percentage to decimal' do
+      expect(emp_percentage.super_rate).to eq 0.30
+    end
+
+    it 'stays intact decimal' do
+      expect(emp_decimal.super_rate).to eq 0.04
+    end
   end
+
 
 end

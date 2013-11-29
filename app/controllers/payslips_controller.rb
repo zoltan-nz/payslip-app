@@ -1,21 +1,21 @@
 class PayslipsController < ApplicationController
 
-  before_action :set_form_params,   only: [:index]
+  before_action :set_form_params
   before_action :set_params,        only: [:show_multiple]
 
   add_crumb('Payslips') {|instance| instance.send :payslips_path }
 
   def index
-
   end
 
-  def create
+  def show_multiple
 
     respond_to do |format|
-      if payslips.lenght > 0
-        format.js { render 'show_multiple', with: @payslips }
+      if payslip_collection
+        format.js { render 'show_multiple'}
       else
-        format.html { render action: 'new' }
+        flash[:error] = @errors.full_messages
+        format.js { render 'show_multiple_error' }
       end
     end
 
@@ -23,15 +23,18 @@ class PayslipsController < ApplicationController
 
   private
 
-  def payslips
-
-    @payslips ||= begin
-      payslips = []
-      @employees.each do |employee|
-        payslips << Payslip.new(employee: employee, pay_period_start_date: @pay_period_start_date, pay_period_end_date: @pay_period_end_date )
-      end
-    end
-
+  def payslip_collection
+     @payslips = []
+     @errors = ""
+     @employees.each do |employee|
+       payslip = Payslip.new(employee: employee, pay_period_start_date: @pay_period_start_date, pay_period_end_date: @pay_period_end_date )
+       if payslip.errors.any?
+         @errors = payslip.errors
+       else
+         @payslips << payslip
+       end
+     end
+     @errors.empty? ? true : false
   end
 
 

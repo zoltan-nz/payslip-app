@@ -3,18 +3,18 @@
 =form_for :payslips, url: payslips_multiple_path,  method: :post, remote: :true, html: {class: 'form-horizontal'} do |f|
   .form-group
     =f.label :employee_id, 'Select employees:', class: 'control-label col-sm-2'
-    .col-sm-10
+    .col-xs-10
       =f.select :employee_id, options_from_collection_for_select(@employees_for_select, :id, :full_name), {include_blank: false, include_hidden: false}, multiple: true, size: 5, class: 'form-control', required: true
   .form-group
     =f.label :payslip_start_date, 'Start Date:', class: 'control-label col-sm-2'
-    .col-sm-10
-      =f.date_field :payslip_start_date, class: 'form-control', required: true
+    .col-xs-10.col-sm-3.col-md-3
+      =f.date_field :payslip_start_date, class: 'form-control input-medium', required: true
   .form-group
     =f.label :payslip_end_date, 'End Date:', class: 'control-label col-sm-2'
-    .col-sm-10
-      =f.date_field :payslip_end_date, class: 'form-control', required: true
+    .col-xs-10.col-sm-3.col-md-3
+      =f.date_field :payslip_end_date, class: 'form-control input-medium', required: true
   .form-group
-    .col-sm-offset-2.col-sm-10
+    .col-xs-10.col-sm-offset-2.col-sm-3.col-md-offset-2.col-md-10
       =f.submit 'Generate Payslips', class: 'btn btn-success'
 
 #payslips_list

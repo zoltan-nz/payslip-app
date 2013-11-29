@@ -1,11 +1,24 @@
+# == Schema Information
+#
+# Table name: tax_ranges
+#
+#  id                   :integer          not null, primary key
+#  income_min           :integer
+#  income_max           :integer
+#  rate                 :decimal(, )
+#  tax_from_lower_range :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
 require 'spec_helper'
 
 describe TaxRange do
 
-  let!(:range1) {TaxRange.create!(income_min: 0,       income_max: 18200,  rate: 0     , tax_from_lower_range: 0)     }
-  let!(:range2) {TaxRange.create!(income_min: 18201,   income_max: 37000,  rate: 0.19  , tax_from_lower_range: 0)     }
-  let!(:range3) {TaxRange.create!(income_min: 37001,   income_max: 80000,  rate: 0.325 , tax_from_lower_range: 3572)  }
-  let!(:range4) {TaxRange.create!(income_min: 80001,   income_max: 180000, rate: 0.37  , tax_from_lower_range: 17547) }
+  let!(:range1) {FactoryGirl.create(:tax_range)}
+  let!(:range2) {FactoryGirl.create(:tax_range2)     }
+  let!(:range3) {FactoryGirl.create(:tax_range3)  }
+  let!(:range4) {FactoryGirl.create(:tax_range4) }
   let!(:annual_salary1) {16000}
   let!(:annual_salary2) {37001}
   let!(:annual_salary3) {60050}

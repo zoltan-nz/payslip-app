@@ -52,6 +52,7 @@ group :development, :test do
   gem 'fuubar'
 
   gem 'factory_girl_rails'
+  gem 'rb-readline'
 end
 
 group :test do

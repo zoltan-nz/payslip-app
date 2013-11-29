@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: tax_ranges
+#
+#  id                   :integer          not null, primary key
+#  income_min           :integer
+#  income_max           :integer
+#  rate                 :decimal(, )
+#  tax_from_lower_range :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
 class TaxRange < ActiveRecord::Base
 
   #methods

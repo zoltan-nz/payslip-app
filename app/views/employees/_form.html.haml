@@ -2,19 +2,19 @@
   .form-group
     =f.label :first_name, 'First Name: ', class: 'control-label col-sm-2'
     .col-sm-10
-      =f.text_field :first_name, class: 'form-control'
+      =f.text_field :first_name, class: 'form-control', autofocus: true, placeholder: 'First Name'
   .form-group
     =f.label :last_name, 'Last Name: ', class: 'control-label col-sm-2'
     .col-sm-10
-      =f.text_field :last_name, class: 'form-control'
+      =f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
   .form-group
     =f.label :annual_salary, 'Annual Salary: ', class: 'control-label col-sm-2'
     .col-sm-10
-      =f.text_field :annual_salary, class: 'form-control'
+      =f.text_field :annual_salary, class: 'form-control', placeholder: 'ex. 85000'
   .form-group
     =f.label :super_rate, 'Super Rate: ', class: 'control-label col-sm-2'
     .col-sm-10
-      =f.text_field :super_rate, class: 'form-control'
+      =f.text_field :super_rate, class: 'form-control', placeholder: 'ex. 9% or 0.09'
   .form-group
     .col-sm-offset-2.col-sm-10
       =button_tag 'Reset', type: :reset, class: 'btn'

@@ -64,14 +64,14 @@ describe EmployeesController do
 
   describe "PUT update" do
     describe "with valid params" do
-      xit "updates the requested employee" do
+      it "updates the requested employee" do
         employee = Employee.create! valid_attributes
         # Assuming there are no other employees in the database, this
         # specifies that the Employee created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Employee.any_instance.should_receive(:update).with({ "these" => "params" })
-        put :update, {:id => employee.to_param, :employee => { "these" => "params" }}, valid_session
+        Employee.any_instance.should_receive(:update).with({'first_name' => 'Joe' })
+        put :update, {:id => employee.to_param, :employee => {'first_name' => 'Joe'}}
       end
 
       it "assigns the requested employee as @employee" do
