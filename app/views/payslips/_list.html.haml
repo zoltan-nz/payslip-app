@@ -3,18 +3,17 @@
   %thead
     %th Name
     %th Pay Period
-    %th Gross Income
-    %th Income Tax
-    %th Net Income
-    %th Super
+    %th.text-right Gross Income
+    %th.text-right Income Tax
+    %th.text-right Net Income
+    %th.text-right Super
 
   %tbody
     - @payslips.each do |ps|
       %tr
         %td=ps.name
         %td=ps.pay_period
-        %td=ps.gross_income
-        %td=ps.income_tax
-        %td=ps.net_income
-        %td=ps.super_amount
-
+        %td.text-right=dollar(ps.gross_income)
+        %td.text-right=dollar(ps.income_tax)
+        %td.text-right=dollar(ps.net_income)
+        %td.text-right=dollar(ps.super_amount)

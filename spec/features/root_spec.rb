@@ -7,6 +7,17 @@ feature 'Home page' do
   end
 end
 
+feature 'Employees button' do
+  scenario 'loading Employees management page', js: true do
+    visit '/'
+    within(:xpath, "/html/body/div[1]/div/div/div[1]/div") do
+      click_on 'Employees'
+    end
+    expect(page).to have_content 'List of Employees'
+  end
+end
+
+
 feature 'Payslips button' do
   scenario 'loading Payslips page', js: true do
     visit '/'
@@ -16,17 +27,6 @@ feature 'Payslips button' do
     expect(page).to have_content 'Create Payslips'
   end
 end
-
-feature 'Payslips button' do
-  scenario 'loading CSV manager page', js: true do
-    visit '/'
-    within(:xpath, "/html/body/div[1]/div/div/div[3]/div") do
-      click_on 'CSV Manager'
-    end
-    expect(page).to have_content 'CSV Manager'
-  end
-end
-
 
 
 

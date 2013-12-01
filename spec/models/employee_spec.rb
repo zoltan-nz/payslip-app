@@ -43,5 +43,16 @@ describe Employee do
     end
   end
 
+  describe '#import' do
+
+    it 'should import valid csv content' do
+      file = File.open('./db/employees.csv')
+      expect(Employee.import(file)).to eq true
+      @employees = Employee.all
+      expect(@employees[0].first_name).to eq 'Theresa'
+      expect(@employees[1].last_name).to eq 'Richardson'
+    end
+
+  end
 
 end

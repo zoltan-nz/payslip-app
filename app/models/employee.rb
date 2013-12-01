@@ -24,6 +24,14 @@ class Employee < ActiveRecord::Base
     "#{self.last_name}, #{self.first_name}"
   end
 
+  def self.import(file)
+    everything_was_right = true
+    CSV.foreach(file.path, headers: true) do |row|
+      Employee.create! row.to_hash
+    end rescue everything_was_right = false
+    everything_was_right
+  end
+
   private
 
   def convert_from_percent_to_decimal

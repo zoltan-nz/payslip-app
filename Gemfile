@@ -14,6 +14,8 @@ gem 'bootstrap-sass',       '~> 3.0.2.0'
 gem 'haml-rails'
 gem 'crummy'
 
+gem 'forgery'
+
 gem 'puma'
 
 gem 'business_time'
@@ -47,12 +49,9 @@ group :development, :test do
   gem 'rb-fsevent',                         require: false  if RUBY_PLATFORM.match(/darwin/)
   gem 'rb-inotify',                         require: false  unless RUBY_PLATFORM.match(/darwin/)
 
-  gem 'forgery'
-
   gem 'fuubar'
 
   gem 'factory_girl_rails'
-  gem 'rb-readline'
 end
 
 group :test do

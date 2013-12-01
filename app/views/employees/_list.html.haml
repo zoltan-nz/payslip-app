@@ -1,0 +1,21 @@
+%table.table
+
+  %thead
+    %th ID
+    %th First Name
+    %th Last Name
+    %th.text-right Annual Salary
+    %th.text-right Super Rate
+    %th.text-right Actions
+
+  %tbody
+    - @employees.each do |employee|
+      %tr
+        %td=employee.id
+        %td=employee.first_name
+        %td=employee.last_name
+        %td.text-right=dollar(employee.annual_salary)
+        %td.text-right="#{'%.2f'%(employee.super_rate*100)}%"
+        %td.text-right
+          =link_to 'Edit', edit_employee_path(employee), class: 'btn btn-success'
+          =link_to 'X', employee_path(employee), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'

@@ -6,6 +6,8 @@ class PayslipsController < ApplicationController
   add_crumb('Payslips') {|instance| instance.send :payslips_path }
 
   def index
+    @tax_range_empty ||= TaxRange.all.empty?
+    flash.now[:error] = 'Please run rake db:seed to setup Tax Range model. Payslip generator cannot work without valid tax ranges.'if @tax_range_empty
   end
 
   def show_multiple

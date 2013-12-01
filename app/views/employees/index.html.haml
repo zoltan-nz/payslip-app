@@ -1,24 +1,24 @@
-=link_to 'Add a new Employee', new_employee_path, class: 'btn btn-primary pull-right'
+=link_to 'Add Employee', new_employee_path, class: 'btn btn-primary pull-right'
 
 %h3 List of Employees
 
-%table.table
-  %thead
-    %th ID
-    %th First Name
-    %th Last Name
-    %th Annual Salary
-    %th Super Rate
-    %th Actions
-  %tbody
-    - @employees.each do |employee|
-      %tr
-        %td=employee.id
-        %td=employee.first_name
-        %td=employee.last_name
-        %td=employee.annual_salary
-        %td="#{'%.2f'%(employee.super_rate*100)}%"
-        %td
-          =link_to 'Edit', edit_employee_path(employee), class: 'btn btn-success'
-          =link_to 'X', employee_path(employee), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-danger'
+- if @employees.empty?
+  .well
+    %p No employee in the database. You can choose the following options to upload employees:
+    %ol
+      %li Create record with form manually. Click to Add Employee button.
+      %li Run seed import. (rake db:seed)
+      %li Import employees from csv file.
 
+- else
+
+  =render 'list'
+
+%h3 Import Employees
+
+.well
+  =form_tag import_employees_path, multipart: true do
+    %p Import Employees from a csv file.
+    =file_field_tag :file, id: 'file-button'
+    %p.help-block The header of csv file must be: first_name,last_name,annual_salary,super_rate
+    =submit_tag 'Import', class: 'btn btn-warning'

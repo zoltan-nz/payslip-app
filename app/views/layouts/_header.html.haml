@@ -7,9 +7,9 @@
     =link_to 'PaySlip App', root_path, class: 'navbar-brand'
   #menubar.collapse.navbar-collapse
     %ul.nav.navbar-nav
-      %li=link_to 'Home', root_path, class: ('active' if current_page?(root_url))
-      %li=link_to 'Employees', employees_path, class: ('active' if current_page?(employees_url))
-      %li=link_to 'Payslips', payslips_path, class: ('active' if current_page?(payslips_url))
+      %li=link_to 'Home', root_path, class: ('active' if controller_name == 'home')
+      %li=link_to 'Employees', employees_path, class: ('active' if controller_name == 'employees')
+      %li=link_to 'Payslips', payslips_path, class: ('active' if controller_name == 'payslips')
 
 - unless current_page?(root_url)
   %ol.breadcrumb
