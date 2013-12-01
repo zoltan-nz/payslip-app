@@ -9,5 +9,7 @@
     .container
       = render 'layouts/header'
       = yield
+      = render 'layouts/footer'
+
     - if controller_name == 'home'
       .image-holder
