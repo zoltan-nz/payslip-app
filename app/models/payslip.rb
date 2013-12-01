@@ -16,7 +16,7 @@ class Payslip
     ) if self.valid?
   end
 
-  validate :employee, :pay_period_start_date, :pay_period_end_date, presence: true
+  validates :employee, :pay_period_start_date, :pay_period_end_date, presence: true
   validate :dates_are_in_the_same_month?
 
 
