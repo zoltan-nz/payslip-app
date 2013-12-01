@@ -5,6 +5,12 @@ This app is available on Heroku: [http://payslip-app.herokuapp.com/](http://pays
 Supported environment: Linux or Mac with the latest Ruby 2.0.0
 
     bundle install
+
+If PostgreSQL does not exist on development machine, and production mode does not need, please use the following command:
+
+    bundle install --without production
+
+    bundle update (optional)
     rake db:migrate
     rake db:seed
     rails s
