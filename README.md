@@ -1,4 +1,4 @@
-This app available on Heroku: [http://payslip-app.herokuapp.com/](http://payslip-app.herokuapp.com/)
+This app is available on Heroku: [http://payslip-app.herokuapp.com/](http://payslip-app.herokuapp.com/)
 
 # How to launch this application
 
