@@ -2,6 +2,8 @@ This app is available on Heroku: [http://payslip-app.herokuapp.com/](http://pays
 
 # How to launch this application
 
+Supported environment: Linux or Mac with the latest Ruby 2.0.0
+
     bundle install
     rake db:migrate
     rake db:seed
