@@ -1,3 +1,5 @@
+This app available on Heroku: [http://payslip-app.herokuapp.com/](http://payslip-app.herokuapp.com/)
+
 # How to launch this application
 
     bundle install
