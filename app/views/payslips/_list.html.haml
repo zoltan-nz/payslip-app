@@ -17,3 +17,7 @@
         %td.text-right=dollar(ps.income_tax)
         %td.text-right=dollar(ps.net_income)
         %td.text-right=dollar(ps.super_amount)
+
+.well
+  Download:
+  =link_to 'csv', payslips_export_csv_path(payslips: @params_for_csv, format: :csv)

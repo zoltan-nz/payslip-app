@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
   add_crumb('Edit Employee', only: ['edit']) {|instance| instance.send :edit_employee_path }
 
   def index
-    @employees = Employee.all
+    @employees = Employee.order(:id)
   end
 
   def new
