@@ -65,3 +65,10 @@ group :test do
   gem 'database_cleaner'
   gem 'zeus'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
+ruby "2.0.0"
