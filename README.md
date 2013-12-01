@@ -1,3 +1,26 @@
+# How to launch this application
+
+    bundle install
+    rake db:migrate
+    rake db:seed
+    rails s
+
+# Features
+
+## Import employees
+
+ 1. Upload manual data via form.
+ 2. Import from csv file. (Example data in db/employees.csv)
+ 3. Generate sample data with rake db:seed
+
+## Export payslips
+
+ 1. Select employees
+ 2. Setup date range
+ 3. Download data in csv format.
+
+Payslip generator can calculate fractal month.
+
 #Employee monthly payslip
 
 When I input the employee's details: first name, last name, annual salary(positive integer) and super rate (0% - 50% inclusive), payment start date,
