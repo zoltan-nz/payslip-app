@@ -1,6 +1,7 @@
 name,pay_period,gross_income,income_tax,net_income,super
 <%= CSV.generate do |csv|
   @payslips.each do |ps|
+    binding.pry
     csv << [ps.name,
             ps.pay_period,
             ps.gross_income,
