@@ -41,7 +41,7 @@ class PayslipsController < ApplicationController
          @payslips << payslip
        end
      end
-     @errors.empty? ? true : false
+     @errors.empty?
   end
 
   def set_form_params
