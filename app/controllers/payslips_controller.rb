@@ -1,7 +1,7 @@
 class PayslipsController < ApplicationController
 
   before_action :set_form_params
-  before_action :set_params,        only: [:show_multiple, :export_csv]
+  before_action :set_params,        only: [:show_multiple]
 
   add_crumb('Payslips') {|instance| instance.send :payslips_path }
 
@@ -14,17 +14,10 @@ class PayslipsController < ApplicationController
     respond_to do |format|
       if payslip_collection
         format.js { render 'show_multiple'}
+        format.csv
       else
         flash[:error] = @errors.full_messages
         format.js { render 'show_multiple_error' }
-      end
-    end
-  end
-
-  def export_csv
-    respond_to do |format|
-      if payslip_collection
-        format.csv
       end
     end
   end
@@ -53,10 +46,6 @@ class PayslipsController < ApplicationController
     @pay_period_start_date = payslip_params[:payslip_start_date]  if payslip_params[:payslip_start_date]
     @pay_period_end_date   = payslip_params[:payslip_end_date]    if payslip_params[:payslip_end_date]
     @params_for_csv = {employee_id: @employees.map(&:id), payslip_end_date: @pay_period_end_date, payslip_start_date: @pay_period_start_date}
-  end
-
-  def payslip_params
-    params[:payslips].permit(:payslip_start_date, :payslip_end_date, :employee_id => [])
   end
 
 end
