@@ -91,3 +91,9 @@ As part of your solution:
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/szines/payslip-app/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+### Todo
+
+1. Update to Rails 4.1
+2. Use Ruby 2.1
+3. Rebuild models and controllers
+4. Extend controller tests.
