@@ -89,8 +89,6 @@ As part of your solution:
 - List any assumptions that you have made in order to solve this problem.
 - Provide instruction on how to run the application
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/szines/payslip-app/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 ### Todo
 
 1. Update to Rails 4.1
