@@ -1,5 +1,7 @@
 This app is available on Heroku: [http://payslip-app.herokuapp.com/](http://payslip-app.herokuapp.com/)
 
+[![Code Climate](https://codeclimate.com/github/szines/payslip-app.png)](https://codeclimate.com/github/szines/payslip-app)
+
 # How to launch this application
 
 Supported environment: Linux or Mac with the latest Ruby 2.0.0
