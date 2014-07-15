@@ -33,7 +33,7 @@ class EmployeesController < ApplicationController
         format.html { redirect_to employees_path, notice: 'Employee was successfully created.' }
       else
         flash.now[:error] = @employee.errors.full_messages
-        format.html { render action: 'new' }
+        format.html { render :new }
       end
     end
   end
@@ -44,7 +44,7 @@ class EmployeesController < ApplicationController
         format.html { redirect_to employees_path, notice: 'Employee was successfully updated.' }
       else
         flash.now[:error] = @employee.errors.full_messages
-        format.html { render action: 'edit' }
+        format.html { render :edit }
       end
     end
   end
