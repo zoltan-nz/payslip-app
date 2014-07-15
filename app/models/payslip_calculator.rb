@@ -30,7 +30,7 @@ class PayslipCalculator
   private
 
   def incomplete_month_calculation
-    if first_date_of_month? and last_date_of_month?
+    if first_date_of_month? && last_date_of_month?
       1
     else
       fraction_part_of_month
