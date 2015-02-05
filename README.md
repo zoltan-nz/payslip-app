@@ -93,7 +93,8 @@ As part of your solution:
 
 ### Todo
 
-1. Update to Rails 4.1
-2. Use Ruby 2.1
+1. Update to Rails 4.2
+2. Use Ruby 2.2
 3. Rebuild models and controllers
 4. Extend controller tests.
+5. Create an api only version with emberjs/angularjs frontend.
