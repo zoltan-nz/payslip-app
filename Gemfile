@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.0"
+
 gem 'rails',                '4.0.1'
 gem 'sass-rails',           '~> 4.0.0'
 gem 'uglifier',             '>= 1.3.0'
@@ -71,5 +73,3 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
-
-ruby "2.0.0"
