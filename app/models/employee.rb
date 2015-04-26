@@ -18,7 +18,7 @@ class Employee < ActiveRecord::Base
   validates :annual_salary, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :super_rate,    presence: true, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 1.0}
 
-  before_validation :convert_from_percent_to_decimal
+  before_validation :convert_from_pct_to_dec
 
   def full_name
     "#{self.last_name}, #{self.first_name}"
@@ -34,7 +34,7 @@ class Employee < ActiveRecord::Base
 
   private
 
-  def convert_from_percent_to_decimal
+  def convert_from_pct_to_dec
     self.super_rate = self.super_rate.to_f/100 if percentage?
   end
 

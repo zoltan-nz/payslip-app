@@ -69,21 +69,21 @@ Employee annual salary is 60,050, super rate is 9%, how much will this employee 
     income tax      = (3,572 + (60,050 - 37,000) x 0.325) / 12  = 921.9375 (round up) = 922
     net income      = 5,004 - 922 = 4,082
     super           = 5,004 x 9% = 450.36 (round down) = 450
- 
- 
-Here is the csv input and output format we provide. 
+
+
+Here is the csv input and output format we provide.
 (But feel free to use any format you want)
 
-Input: 
+Input:
 
     first name, last name, annual salary, super rate (%), payment start date
     David, Rudd, 60050, 9%, 01 March – 31 March
     Ryan, Chen, 120000, 10%, 01 March – 31 March
-    
-Output: 
- 
+
+Output:
+
     name, pay period, gross income, income tax, net income, super
-    David Rudd, 01 March – 31 March, 5004, 922, 4082, 450 
+    David Rudd, 01 March – 31 March, 5004, 922, 4082, 450
     Ryan Chen, 01 March – 31 March, 10000, 2696, 7304, 1000
 
 As part of your solution:
@@ -93,8 +93,8 @@ As part of your solution:
 
 ### Todo
 
-1. Update to Rails 4.2
-2. Use Ruby 2.2
+1. ~~ Update to Rails 4.2 ~~
+2. ~~ Use Ruby 2.2 ~~
 3. Rebuild models and controllers
 4. Extend controller tests.
 5. Create an api only version with emberjs/angularjs frontend.

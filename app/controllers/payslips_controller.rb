@@ -13,7 +13,7 @@ class PayslipsController < ApplicationController
   def show_multiple
     respond_to do |format|
       if payslip_collection
-        format.js { render 'show_multiple'}
+        format.js { render 'show_multiple' }
         format.csv
       else
         flash[:error] = @errors.full_messages
@@ -46,6 +46,10 @@ class PayslipsController < ApplicationController
     @pay_period_start_date = payslip_params[:payslip_start_date]  if payslip_params[:payslip_start_date]
     @pay_period_end_date   = payslip_params[:payslip_end_date]    if payslip_params[:payslip_end_date]
     @params_for_csv = {employee_id: @employees.map(&:id), payslip_end_date: @pay_period_end_date, payslip_start_date: @pay_period_start_date}
+  end
+
+  def payslip_params
+    params[:payslips]
   end
 
 end

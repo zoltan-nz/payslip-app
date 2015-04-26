@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.2.1"
 
 gem 'rails',                '4.2.1'
-gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -11,6 +10,9 @@ gem 'jquery-turbolinks'
 gem 'jbuilder'
 
 gem 'bootstrap-sass'
+gem 'sass-rails'
+
+gem 'haml'
 gem 'haml-rails'
 gem 'crummy'
 
@@ -23,7 +25,6 @@ gem 'business_time'
 group :development do
   gem 'annotate'
   gem 'better_errors'
-  gem 'debugger'
   gem 'quiet_assets'
 
   gem 'hirb'
@@ -34,10 +35,15 @@ group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'meta_request'
+
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
 end
 
 
 group :development, :test do
+  gem 'byebug'
+
   gem 'sqlite3'
 
   gem 'pry-remote'
@@ -46,14 +52,17 @@ group :development, :test do
   gem 'pry-nav'
 
   gem 'rspec-rails'
+  gem 'rspec-its'
 
-  gem 'libnotify'
+  gem 'libnotify',                          require: false  if RUBY_PLATFORM.match(/darwin/)
   gem 'rb-fsevent',                         require: false  if RUBY_PLATFORM.match(/darwin/)
   gem 'rb-inotify',                         require: false  unless RUBY_PLATFORM.match(/darwin/)
 
   gem 'fuubar'
 
   gem 'factory_girl_rails'
+
+  gem 'rubocop', require: false
 end
 
 group :test do
@@ -61,11 +70,14 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
 
-  gem 'guard-rspec'
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'zeus'
+
+  gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end
 
 group :production do
